@@ -1,0 +1,32 @@
+name: Publish My Site
+
+on:
+  push:
+    branches:
+      - main  # 当 main 分支有推送时触发工作流
+
+jobs:
+  build:
+    runs-on: ubuntu-latest  # 使用最新的 Ubuntu 环境
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2  # 检出仓库代码
+
+    - name: Set up Python
+      uses: actions/setup-python@v2  # 设置 Python 环境
+      with:
+        python-version: 3.8  # 使用 Python 3.8
+
+    - name: Install dependencies
+      run: |
+        pip install mkdocs mkdocs-material  # 安装 MkDocs 和 Material 主题
+
+    - name: Build site
+      run: mkdocs build  # 构建 MkDocs 文档
+
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3  # 使用 GitHub Pages 部署工具
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}  # GitHub 令牌
+        publish_dir: ./site  # 要部署的目录
