@@ -49,13 +49,12 @@ nav:
   - 主页: 
     - 首页: index.md
   - 经验心得:
-      - 专业知识: 经验心得\learning\professional.md
-      - 技能提升: 经验心得\learning\skills.md
+      - 专业知识: 经验心得/learning/professional.md
+      - 技能提升: 经验心得/learning/skills.md
   - 文汇撷英:
       - 格物荐书: 文汇撷英/格物荐书/books.md
       - 明理书摘: 文汇撷英/明理书摘/articles.md
   - 关于我: about.md
-  
 
 
 # ==============================================
@@ -189,18 +188,18 @@ extra_dirs:
 # 9. 自定义资源（JS/CSS）
 # ==============================================
 extra_javascript:
-    - javascripts/extra.js  # 自定义JavaScript脚本
-    - js/translate_config.js             # 翻译配置脚本
-    - js/analytics.js                    # 百度统计脚本
+    # - javascripts/extra.js  # 若文件不存在，先注释
+    # - js/translate_config.js  # 若文件不存在，先注释
+    # - js/analytics.js  # 若文件不存在，先注释
 extra_css:
-    - extra.css             # 自定义CSS样式
+    # - extra.css  # 若文件不存在，先注释
 
 
 # ==============================================
 # 9. 钩子配置（自定义Python脚本）
 # ==============================================
 hooks:
-  - docs/overrides/hooks/reading_time.py  # 阅读时间统计
+  - docs/overrides/hooks/reading_time.py  # 确保该文件存在，否则注释
 
 
 # ==============================================
