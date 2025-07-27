@@ -1,0 +1,111 @@
+:root {
+  --primary-color: #2563eb; /* 主色调：蓝色 */
+  --secondary-color: #4f46e5; /* 辅助色：靛蓝色 */
+  --text-color: #333333; /* 文本颜色 */
+  --background-color: #f8fafc; /* 背景色 */
+  --card-background: #ffffff; /* 卡片背景色 */
+  --border-radius: 8px; /* 圆角半径 */
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); /* 阴影效果 */
+}
+
+/* 全局样式优化 */
+body {
+  font-family: 'Inter', system-ui, sans-serif; /* 现代无衬线字体 */
+  line-height: 1.6; /* 行高优化 */
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+
+/* 标题样式 */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--primary-color);
+  margin-top: 1.5rem;
+  margin-bottom: 0.8rem;
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 2rem;
+  border-bottom: 2px solid var(--primary-color);
+  padding-bottom: 0.5rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  border-bottom: 1px solid #e2e8f0;
+  padding-bottom: 0.3rem;
+}
+
+/* 卡片组件样式 */
+.md-card {
+  background-color: var(--card-background);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  transition: transform 0.2s ease-in-out;
+}
+
+.md-card:hover {
+  transform: translateY(-3px);
+}
+
+/* 表格样式优化 */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+}
+
+table th, table td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+table th {
+  background-color: #f1f5f9;
+  font-weight: 600;
+}
+
+/* 图片样式 */
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--border-radius);
+  margin: 1rem 0;
+  box-shadow: var(--shadow);
+}
+
+/* 代码块样式 */
+pre {
+  background-color: #1e293b !important;
+  border-radius: var(--border-radius);
+  padding: 1rem;
+  overflow-x: auto;
+}
+
+/* 按钮样式 */
+.md-button {
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius);
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.md-button:hover {
+  background-color: #1d4ed8;
+}
+
+/* 页脚样式 */
+.md-footer {
+  margin-top: 2rem;
+  padding: 1rem;
+  text-align: center;
+  color: #64748b;
+  border-top: 1px solid #e2e8f0;
+}
