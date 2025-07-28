@@ -60,13 +60,16 @@ extra:
     - icon: fontawesome/brands/weixin
       link: https://s1.imagehub.cc/images/2025/07/26/4e9e072b52e963d4c149f3c3edca3388.jpg
       name: 微信二维码
+    - icon: fontawesome/solid/envelope
+      link: mailto:2026125544@qq.com
+      name: QQ邮箱
 
 
 plugins:
   - search
   - blog:
       post_date_format: full
-      post_readtime: false
+      post_readtime: true 
   - tags:
       tags_file: tag.md  # 分类标签
 
@@ -75,7 +78,8 @@ nav:
   - 学习:
     - 金句摘抄: study/article.md
     - 书籍推荐: study/book.md
-  - 博客: blog/index.md
+  - 博客: 
+    - blog/index.md
   - 标签: tag.md
 
 markdown_extensions: #详见https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/ 和 https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown/

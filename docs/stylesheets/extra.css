@@ -1,7 +1,7 @@
 :root>* {
-  --md-primary-fg-color: #518FC1;
-  --md-primary-fg-color--light: #518FC1;
-  --md-primary-fg-color--dark: #518FC1;
+  --md-primary-fg-color: #f97316;
+  --md-primary-fg-color--light: #fb923c;
+  --md-primary-fg-color--dark: #ea580c;
 }
 
 /* 图片样式优化 - 合并相似规则 */
@@ -162,12 +162,23 @@ footer a:hover {
 
 
 
-/*圆角*/
+/* 圆角配置（符合黄金比例） */
 :root {
-  --rcorners-border-radius: 25px;
-  --rcorners-border-color: #518FC1;
-  --rcorners-padding: 20px;
-  --rcorners-width: 100%;
+  --rcorners-border-radius: 25px; /* 基础圆角半径 */
+  --rcorners-border-radius-lg: calc(25px * 1.618); /* 大圆角（黄金比例） */
+  --rcorners-border-radius-sm: calc(25px / 1.618); /* 小圆角（黄金比例） */
+  
+  --rcorners-border-color: #518FC1; /* 边框颜色 */
+  --rcorners-border-color-light: #89B8E2; /* 边框浅色（黄金比例） */
+  --rcorners-border-color-dark: #2C67A3; /* 边框深色（黄金比例） */
+  
+  --rcorners-padding: 20px; /* 基础内边距 */
+  --rcorners-padding-lg: calc(20px * 1.618); /* 大内边距（黄金比例） */
+  --rcorners-padding-sm: calc(20px / 1.618); /* 小内边距（黄金比例） */
+  
+  --rcorners-width: 100%; /* 基础宽度 */
+  --rcorners-width-lg: calc(100% * 1.618); /* 大宽度（黄金比例） */
+  --rcorners-width-sm: calc(100% / 1.618); /* 小宽度（黄金比例） */
 }
 
 /* 圆角容器1 - 渐变背景 */
