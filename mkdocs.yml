@@ -52,8 +52,9 @@ nav:
       - 专业知识: 经验心得/learning/professional.md  # 路径分隔符改为 /
       - 技能提升: 经验心得/learning/skills.md        # 路径分隔符改为 /
   - 文汇撷英:
-      - 格物荐书: 文汇撷英/格物荐书/books.md
       - 明理书摘: 文汇撷英/明理书摘/articles.md
+      - 格物荐书: 文汇撷英/格物荐书/books.md
+      
   - 关于我: about.md
 
 
