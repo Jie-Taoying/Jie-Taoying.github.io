@@ -3,3 +3,16 @@ site_url: https://github.com/Jie-Taoying/Jie-Taoying.github.io
 theme:
   name: material
 
+  features:
+    - navigation.footer
+
+extra:
+  social:
+    - icon: fontawesome/brands/github  # GitHub 图标
+      link: https://github.com/Jie-Taoying  # 替换为您的 GitHub 链接
+    - icon: fontawesome/brands/weixin  # 微信图标
+      link: https://s1.imagehub.cc/images/2025/07/26/4e9e072b52e963d4c149f3c3edca3388.jpg  # 替换为您的微信(ID/二维码/公众号)
+    - icon: fontawesome/brands/qq  # QQ 邮箱图标
+      link: "mailto:2026125544@qq.com"  # 替换为您的 QQ 邮箱地址
+    - icon: fontawesome/brands/x-twitter  # X（原Twitter）图标
+      link: https://twitter.com/你的Twitter用户名  # 替换为您的Twitter链接
