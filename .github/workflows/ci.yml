@@ -44,7 +44,7 @@ jobs:
       - run: pip install pymdown-extensions
       - run: pip install mkdocs-material 
       - run: pip install --upgrade --force-reinstall mkdocs-material
-      - run: pip install mkdocs-document-dates-plugin -i https://pypi.tuna.tsinghua.edu.cn/simple # 新增安装document-dates插件的步骤
+      - run: pip install mkdocs-document-dates-plugin -i https://mirrors.aliyun.com/pypi/simple/ # 新增安装document-dates插件的步骤
       - name: Deploy with AI Summary
         env:
           # AI摘要开关控制
