@@ -5,7 +5,7 @@ site_description: 分享学习、技能、实践等方面的经验与思考
 
 theme:
   name: material
-  # custom_dir: docs/overrides
+  custom_dir: docs/overrides #覆写路径
   palette:
     - scheme: default
       primary: deep blue
@@ -25,6 +25,19 @@ theme:
   language: zh
   logo: https://s1.imagehub.cc/images/2025/07/28/ad2070c0e012973beba367ce4ebbe404.jpeg
   favicon: https://s1.imagehub.cc/images/2025/07/28/ad2070c0e012973beba367ce4ebbe404.jpeg
+
+extra:
+  alternate:
+    - name: 中文
+      link: "javascript:translate.changeLanguage('chinese_simplified');"
+      lang: zh
+    - name: 繁體中文 (台灣)
+      link: "javascript:translate.changeLanguage('chinese_traditional_taiwan');"
+      lang: zh-TW
+    - name: English
+      link: "javascript:translate.changeLanguage('english');"
+      lang: en
+    
 
   features:
     - announce.dismiss
@@ -81,6 +94,8 @@ nav:
   - 博客: 
     - blog/index.md
   - 标签: tag.md
+  - 我的:
+    - 关于我: 关于我/My.md
 
 markdown_extensions: #详见https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/ 和 https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown/
   - abbr
@@ -140,8 +155,8 @@ extra_javascript:
   - https://cdn.jsdelivr.net/gh/Wcowin/Wcowin.github.io@main/docs/javascripts/view.js
 
 extra_css:
-  # - stylesheets/extra.css # 自定义CSS
-  - https://cdn.jsdelivr.net/gh/Wcowin/Mkdocs-Wcowin@main/docs/stylesheets/extra.css
+  - stylesheets/extra.css # 自定义CSS
+  # - https://cdn.jsdelivr.net/gh/Wcowin/Mkdocs-Wcowin@main/docs/stylesheets/extra.css
   # - stylesheets/link.css #友链配置
   - https://cdn.jsdelivr.net/gh/Wcowin/Mkdocs-Wcowin@main/docs/stylesheets/link.css  #友链CDN
   # - stylesheets/customize.css # 搜索圆角优化
