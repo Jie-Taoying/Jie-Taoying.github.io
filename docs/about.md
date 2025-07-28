@@ -190,12 +190,6 @@
         </li>
     </ul>
 
-    <div class="section-title">网站说明</div>
-    <div class="site-info">
-        <p>本网站使用MkDocs和Material主题构建，采用Markdown格式编写内容。所有文章和资料仅供学习交流使用，转载请注明出处。</p>
-        <div class="source-code">
-            <a href="#" class="highlight"><i class="fab fa-github"></i> 查看源代码</a>
-        </div>
-    </div>
+    
 </div>
     
