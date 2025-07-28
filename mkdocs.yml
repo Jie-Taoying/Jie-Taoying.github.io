@@ -5,7 +5,7 @@ site_description: 分享学习、技能、实践等方面的经验与思考
 
 theme:
   name: material
-  custom_dir: docs/overrides
+  # custom_dir: docs/overrides
   palette:
     - scheme: default
       primary: deep blue
