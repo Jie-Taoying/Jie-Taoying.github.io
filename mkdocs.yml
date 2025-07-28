@@ -1,8 +1,8 @@
 #[Info]
-site_name: Wcowin for MkDocs博客教程 #your site name 显示在左上角
-site_url: http://wcowin.work/Mkdocs-Wcowin
+site_name: 攀登 #your site name 显示在左上角
+site_url: https://jie-taoying.github.io/
 site_description: Content and ambitious, gentle yet firm.
-site_author: 王科文(Wcowin) # your name
+site_author: 揭涛英 # your name
 #[UI]
 theme:
   name: material
@@ -61,8 +61,8 @@ theme:
     repo: fontawesome/brands/github #右上角图标
     logo: logo
 edit_uri: edit/main/docs # 编辑按钮跳转的链接
-repo_url: https://github.com/Wcowin/Mkdocs-Wcowin # 右上角点击跳转的链接
-repo_name: Mkdocs-Wcowin # 右上角的名字
+repo_url: https://github.com/Jie-Taoying/Jie-Taoying.github.io # 右上角点击跳转的链接
+repo_name: Jie-Taoying.github.io # 右上角的名字
 
 # [Navigtion]
 nav:
@@ -119,15 +119,14 @@ copyright: Copyright &copy; 2022~2025 Wcowin # 左下角的版权声明
 extra:
   generator: true #是否删除页脚显示“使用 MkDocs 材料制造”
   social:
-    - icon: fontawesome/brands/x-twitter #联系方式图标 : https://fontawesome.com/ 去这里找图标
-      link: https://twitter.com/wcowin_
+    # - icon: fontawesome/brands/x-twitter #联系方式图标 : https://fontawesome.com/ 去这里找图标
+      # link: https://twitter.com/wcowin_
     - icon: fontawesome/brands/github
-      link: https://github.com/Wcowin
-
+      link: https://github.com/Jie-Taoying
     - icon: fontawesome/regular/envelope #联系方式图标
-      link: mailto:<wangkewen821@gmail.com> #邮件联系方式
-    - icon: fontawesome/brands/bilibili
-      link: https://space.bilibili.com/1407028951?spm_id_from=333.1007.0.0
+      link: mailto:<2026125544@qq.com> #邮件联系方式
+    - icon: fontawesome/brands/weixin
+      link: https://s1.imagehub.cc/images/2025/07/26/4e9e072b52e963d4c149f3c3edca3388.jpg
   analytics:
     provider: google #谷歌分析
     property: ##如果你 clone 了my模板，请将这个修改为你的
