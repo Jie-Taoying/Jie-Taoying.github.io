@@ -34,6 +34,7 @@ img.twitter { color: #1DA1F2; }
   --md-admonition-icon--pied-piper1: var(--md-admonition-icon--pied-piper); /* 复用相同的图标 */
 }
 
+
 /* 提示框样式 - pied-piper */
 .md-typeset .admonition.pied-piper,
 .md-typeset details.pied-piper {
@@ -556,4 +557,47 @@ div.hide {
 /* 目录导航的缩进参考线 */
 nav.md-nav--secondary ul {
   border-left: 1px solid lightblue;
+}
+
+/* 翻译按钮样式 */
+.translate-container {
+  position: relative;
+  margin-left: 1rem;
+}
+
+#translate-btn {
+  padding: 0.6rem;
+  color: var(--md-primary-bg-color);
+}
+
+.translate-dropdown {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 100%;
+  min-width: 120px;
+  background-color: var(--md-default-bg-color);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+  border-radius: 0.2rem;
+}
+
+.translate-dropdown button {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 0.5rem 1rem;
+  border: none;
+  background: none;
+  color: var(--md-default-fg-color);
+  cursor: pointer;
+}
+
+.translate-dropdown button:hover {
+  background-color: var(--md-primary-fg-color--light);
+  color: var(--md-primary-bg-color);
+}
+
+.translate-container:hover .translate-dropdown {
+  display: block;
 }
