@@ -1,141 +1,168 @@
-site_name: 攀登                    # 网站名称，显示在导航栏和浏览器标签
-site_url: https://github.com/Jie-Taoying/Jie-Taoying.github.io  # 网站URL
-site_description: 分享平台  # 网站描述，用于SEO
-site_author: Jie-Taoying          # 网站作者信息
+# 网站基础信息配置
+site_name: 攀登                    # 网站名称，显示在导航栏顶部和浏览器标签页
+site_url: https://github.com/Jie-Taoying/Jie-Taoying.github.io  # 网站访问URL，用于生成页面内绝对链接和SEO
+site_description: 分享平台  # 网站描述，会被搜索引擎抓取，用于优化搜索结果
+site_author: Jie-Taoying          # 网站作者信息，部分主题会在页脚显示
 
 
-# 文档源文件目录和输出目录配置
-docs_dir: docs                    # Markdown源文件所在目录
-site_dir: site                    # 生成的静态网站输出目录
+# 文档目录配置
+docs_dir: docs                    # Markdown源文件存放目录（默认值为docs，可自定义）
+site_dir: site                    # 构建后静态文件输出目录（默认值为site，部署时需上传此目录内容）
 
 
-# 主题配置 - Material主题核心设置
+# 主题核心配置（使用Material主题）
 theme:
-  name: material                  # 使用Material主题
-  custom: overrides  # 指定自定义模板目录
-  language: zh
-  custom_dir: docs/overrides
-  favicon: docs/overrides/assets/images/卡拉比丘流形logo.jpeg  # 指定图标文件路径,站点logo
+  name: material                  # 指定使用Material for MkDocs主题（主流高颜值主题）
+  # 修正：删除重复的"custom: overrides"，统一用custom_dir指定自定义模板目录
+  custom_dir: docs/overrides      # 自定义模板目录路径，存放修改的HTML、CSS等（需手动创建该目录）
+  language: zh                    # 网站默认语言（zh为中文，影响主题内置文本如"搜索"、"返回顶部"等）
+  favicon: docs/overrides/assets/images/卡拉比丘流形logo.jpeg  # 网站图标路径（建议用.ico格式，此处需确保文件存在）
   
-     
-  # 自定义主色调（清华紫）
+  # 主题配色方案（支持浅色/深色模式自动切换）
   palette:
-    # 浅色模式配置
-    - media: "(prefers-color-scheme: light)"  # 检测系统浅色模式
-      scheme: default                         # 使用默认配色方案
-      primary: indigo                         # 主色调为靛蓝色
-      accent: light blue                      # 强调色为浅蓝色
+    # 浅色模式配置（系统默认或用户切换到浅色时生效）
+    - media: "(prefers-color-scheme: light)"  # 检测系统浅色模式的媒体查询
+      scheme: default                         # 使用Material主题默认浅色配色
+      primary: indigo                         # 主色调（靛蓝色，影响导航栏、按钮等核心元素）
+      accent: light blue                      # 强调色（浅蓝色，影响链接、高亮元素）
       toggle:
-        icon: material/brightness-7           # 切换按钮图标（太阳）
-        name: 切换到深色模式                   # 按钮提示文本
-
-    # 深色模式配置
-    - media: "(prefers-color-scheme: dark)"   # 检测系统深色模式
-      scheme: slate                           # 使用石板灰配色方案
-      primary: indigo                         # 主色调为靛蓝色
-      accent: light blue                      # 强调色为浅蓝色
+        icon: material/brightness-7           # 切换按钮图标（太阳图标，代表当前是浅色模式）
+        name: 切换到深色模式                   # 按钮悬停提示文本
+    # 深色模式配置（系统默认或用户切换到深色时生效）
+    - media: "(prefers-color-scheme: dark)"   # 检测系统深色模式的媒体查询
+      scheme: slate                           # 使用石板灰深色配色
+      primary: indigo                         # 主色调（保持与浅色模式一致，保证品牌统一性）
+      accent: light blue                      # 强调色（同上）
       toggle:
-        icon: material/brightness-4           # 切换按钮图标（月亮）
-        name: 切换到浅色模式                   # 按钮提示文本
+        icon: material/brightness-4           # 切换按钮图标（月亮图标，代表当前是深色模式）
+        name: 切换到浅色模式                   # 按钮悬停提示文本
 
-  # 启用的功能 - 主题增强功能列表
+  # 启用的主题功能（按需开启，过多会增加加载压力）
   features:
-    - navigation.footer        # 显示页脚导航
-    - navigation.instant       # 启用即时加载（无刷新导航）
-    - navigation.tabs          # 使用标签式导航
-    - navigation.sections      # 按章节分组导航项
-    - navigation.expand        # 默认展开所有导航层级
-    - navigation.path          # 显示当前页面在导航中的路径
-    - navigation.top           # 显示返回顶部按钮
-    - content.code.copy        # 在代码块添加复制按钮
-    - content.tabs.link        # 标签页支持链接
-    - header.autohide          # 滚动时自动隐藏头部
-    - navigation.indexes       # 将索引页视为常规页面
-    - search.highlight         # 高亮显示搜索结果
-    - search.share             # 添加搜索结果分享功能
-    - search.suggest           # 提供搜索建议
+    - navigation.footer        # 在页脚显示导航链接（面包屑路径）
+    - navigation.instant       # 无刷新导航（点击链接不跳转页面，提升体验）
+    - navigation.tabs          # 顶部导航使用标签式展示（适合多分类文档）
+    - navigation.sections      # 导航栏按章节分组显示（让结构更清晰）
+    - navigation.expand        # 默认展开所有导航层级（无需手动点击展开）
+    - navigation.path          # 显示当前页面在导航中的完整路径（如"首页 > 关于我"）
+    - navigation.top           # 页面滚动时显示"返回顶部"按钮
+    - content.code.copy        # 代码块右上角显示"复制"按钮
+    - content.tabs.link        # 支持标签页内容的锚点链接（可直接跳转至某个标签）
+    - header.autohide          # 滚动时自动隐藏头部导航栏（节省屏幕空间）
+    - navigation.indexes       # 将索引页（如index.md）视为常规导航项
+    - search.highlight         # 搜索结果中高亮匹配的关键词（需配合CSS生效）
+    - search.share             # 搜索结果页显示"分享"按钮
+    - search.suggest           # 输入搜索词时显示自动补全建议
+    - announce.dismiss         # 允许用户关闭公告栏（如果配置了公告功能）
 
-  # 图标配置 - 设置网站图标
+  # 图标配置（自定义网站内使用的图标）
   icon:
-    logo: material/school    # 网站标志图标
-    repo: material/github       # 仓库链接图标
-    alternate: fontawesome/solid/language  # 自定义语言切换图标
-    previous: fontawesome/solid/angle-left
-    next: fontawesome/solid/angle-right
+    logo: material/school    # 导航栏左侧的网站标志图标（material/前缀表示使用Material Design图标）
+    repo: material/github       # 仓库链接的图标（显示在右上角）
+    alternate: fontawesome/solid/language  # 语言切换按钮的图标（依赖Font Awesome）
+    previous: fontawesome/solid/angle-left  # 上一页按钮图标
+    next: fontawesome/solid/angle-right     # 下一页按钮图标
 
-  # 字体配置 - 设置网站使用的字体
+  # 字体配置（影响网站整体文字显示）
   font:
-    text: Roboto                # 正文字体
-    code: Roboto Mono           # 代码字体
+    text: Roboto                # 正文字体（Google的无衬线字体，清晰易读）
+    code: Roboto Mono           # 代码块字体（等宽字体，适合展示代码）
 
-# 导航结构 - 定义网站的导航菜单
+
+# 导航菜单结构（左侧导航栏显示的内容）
 nav:
-  - 首页: index.md
-  - 关于我: about.md
+  - 首页: index.md              # 导航项名称: 对应Markdown文件路径（index.md为首页默认文件）
+  - 关于我: about.md            # 新增页面需在此处配置，否则不会显示在导航中
 
-# 插件配置 - 启用各种MkDocs插件
+
+# 启用的插件（扩展MkDocs功能）
 plugins:
-  - search                     # 搜索功能插件
-  
-  
+  - search                     # 内置搜索插件（提供全文搜索功能，必须启用）
 
-# Markdown扩展 - 增强Markdown语法支持
+
+# Markdown语法扩展（增强Markdown功能）
 markdown_extensions:
-  - toc:                      # 自动生成目录
-      permalink: true         # 为标题添加永久链接
-  - codehilite:               # 代码高亮
-      guess_lang: false       # 不自动猜测代码语言
-  - admonition                # 支持提示框（警告、提示等）
-  - footnotes                 # 支持脚注
-  - meta                      # 支持页面元数据
-  - pymdownx.arithmatex       # 支持数学公式
-  - pymdownx.betterem:        # 增强斜体和粗体支持
+  - toc:                      # 自动生成目录（在文档中用[TOC]调用）
+      permalink: true         # 为每个标题添加永久链接图标（点击可跳转到该标题）
+  - codehilite:               # 代码块语法高亮（需配合主题CSS）
+      guess_lang: false       # 不自动猜测代码语言（需手动指定，更准确）
+  - admonition                # 支持提示框（如!!! note 生成提示块）
+  - footnotes                 # 支持脚注（用[^1]标记，文末自动生成注释）
+  - meta                      # 支持页面元数据（在文档开头用---定义title、date等）
+  - pymdownx.arithmatex       # 支持LaTeX数学公式（需配合MathJax）
+  - pymdownx.betterem:        # 增强斜体和粗体（支持__粗体__和_斜体_的严格语法）
       smart_enable: all
-  - pymdownx.caret            # 支持上标和插入标记
-  - pymdownx.critic           # 支持评论和修订标记
-  - pymdownx.details          # 支持折叠内容块
-  # - pymdownx.emoji:           # 支持表情符号
-    #  emoji_index: !!python/name:materialx.emoji.twemoji
-     # emoji_generator: !!python/name:materialx.emoji.to_svg
-  - pymdownx.highlight        # 高级代码高亮
-  - pymdownx.inlinehilite     # 支持行内代码高亮
-  - pymdownx.keys             # 支持键盘按键表示
-  - pymdownx.mark             # 支持标记文本
-  - pymdownx.smartsymbols     # 支持智能符号（如箭头、版权符号等）
-  - pymdownx.superfences      # 支持嵌套代码块
-  - pymdownx.tabbed           # 支持标签式内容
-  - pymdownx.tasklist:        # 支持任务列表
-      custom_checkbox: true
-  - pymdownx.tilde            # 支持删除线和下标
+  - pymdownx.caret            # 支持上标(^内容^)和插入标记(++内容++)
+  - pymdownx.critic           # 支持文档修订标记（如{--删除--}、{++插入++}）
+  - pymdownx.details          # 支持折叠块（<details>标签，点击展开/折叠）
+  # - pymdownx.emoji:           # （可选）启用表情符号（需配置emoji来源）
+  #   emoji_index: !!python/name:materialx.emoji.twemoji
+  #   emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.highlight        # 高级代码高亮（与codehilite二选一，功能更全）
+  - pymdownx.inlinehilite     # 支持行内代码高亮（如`#!python print("hello")`）
+  - pymdownx.keys             # 支持键盘按键表示（如++ctrl+alt+del++）
+  - pymdownx.mark             # 支持高亮标记（==内容==）
+  - pymdownx.smartsymbols     # 自动替换符号（如->替换为→，©替换为©）
+  - pymdownx.superfences      # 支持嵌套代码块（代码块内可包含其他块元素）
+  - pymdownx.tabbed           # 支持标签页（用=== 标签名 === 分隔内容）
+  - pymdownx.tasklist:        # 支持任务列表（- [x] 表示已完成）
+      custom_checkbox: true    # 使用自定义样式的复选框
+  - pymdownx.tilde            # 支持删除线（~~内容~~）和下标（~内容~）
 
-# 自定义CSS和JavaScript - 添加自定义样式和脚本
+
+# 自定义资源（CSS和JavaScript）
 extra_css:
-  - overrides/assets/stylesheets/extra.css      # 自定义CSS文件
-  - https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css  # Font Awesome CSS
-
+  - overrides/assets/stylesheets/extra.css      # 自定义CSS文件（用于修改样式，如搜索高亮）
+  - https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css  # 引入Font Awesome图标库
 
 extra_javascript:
-  - overrides/assets/javascripts/extra.js       # 自定义JavaScript文件
+  - overrides/assets/javascripts/extra.js       # 自定义JavaScript文件（用于扩展功能，如翻译）
 
 
-# 仓库配置 - 设置Git仓库信息
-repo_name: Jie-Taoying/Jie-Taoying.github.io  # 仓库名称
-repo_url: https://github.com/Jie-Taoying/Jie-Taoying.github.io  # 仓库URL
-edit_uri: edit/main/docs/      # 编辑页面的链接格式
+# 仓库链接配置（右上角显示的仓库图标链接）
+repo_name: Jie-Taoying/Jie-Taoying.github.io  # 仓库名称（显示在图标悬停提示）
+repo_url: https://github.com/Jie-Taoying/Jie-Taoying.github.io  # 仓库跳转链接
+edit_uri: edit/main/docs/      # 文档编辑链接格式（点击"编辑"按钮跳转的路径）
 
-# 社交链接 - 在页面底部显示社交链接
+
+# 额外功能配置
 extra:
+  # 社交链接（页脚显示的第三方平台链接）
   social:
-    - icon: fontawesome/brands/github  # GitHub图标
-      link: https://github.com/Jie-Taoying  # GitHub链接
+    - icon: fontawesome/brands/github  # 图标（来自Font Awesome）
+      link: https://github.com/Jie-Taoying  # 跳转链接
     - icon: fontawesome/brands/weixin  # 微信图标
-      link: https://s1.imagehub.cc/images/2025/07/26/4e9e072b52e963d4c149f3c3edca3388.jpg  # 微信链接
+      link: https://s1.imagehub.cc/images/2025/07/26/4e9e072b52e963d4c149f3c3edca3388.jpg  # 微信二维码链接
     - icon: fontawesome/brands/qq  # QQ图标
-      link: https://s1.imagehub.cc/images/2025/07/28/dd3459f55526b7580ea87ee002dde4d7.jpg  # QQ链接
-    - icon: fontawesome/brands/x-twitter  # X（原Twitter）图标
-      link: https://twitter.com/你的Twitter用户名  # Twitter链接
+      link: https://s1.imagehub.cc/images/2025/07/28/dd3459f55526b7580ea87ee002dde4d7.jpg  # QQ二维码链接
+    - icon: fontawesome/brands/x-twitter  # X(Twitter)图标
+      link: https://twitter.com/你的Twitter用户名  # 需替换为实际账号链接
     - icon: fontawesome/solid/envelope  # 邮箱图标
-      link: mailto:2026125544@qq.com  # 邮箱链接
+      link: mailto:2026125544@qq.com  # 邮件链接（点击直接打开邮件客户端）
+  generator: false  # 隐藏页脚的"Made with Material for MkDocs"生成器标识
+
+  # 统计与反馈配置
+  analytics: 
+    #provider: google
+    #property: G-XXXXXXXXXX  #你的Google Analytics ID
+    feedback:
+      title: 此页面有帮助吗？
+      ratings:
+        - icon: material/thumb-up-outline
+          name: 有帮助
+          data: 1
+          note: 谢谢你的反馈！
+        - icon: material/thumb-down-outline
+          name: 需改进
+          data: 0
+          note: 感谢反馈！可通过<a href="反馈链接" target="_blank">反馈表单</a>帮助我们优化。
+
+  # Cookie同意提示（GDPR合规，欧盟地区用户需显示）
+  consent:
+    title: Cookie 许可
+    description: 我们使用Cookie识别重复访问和偏好，以优化网站体验。同意即表示您允许我们使用Cookie。
+
+  # 语言切换选项（对应页面右上角的语言选择器）
   alternate:
     - name: 中文（简体）
       link: "javascript:translate.changeLanguage('chinese_simplified');"
@@ -144,20 +171,20 @@ extra:
     - name: 中文（繁體）
       link: "javascript:translate.changeLanguage('chinese_traditional');"
       lang: zh_TW
-      # 中国香港、中国台湾、中国澳门 - 繁体中文在华语圈广泛使用
+      # 中国香港、台湾、澳门等地区使用
     - name: English
       link: "javascript:translate.changeLanguage('english');"
       lang: en
-      # 英国、美国 - 英语是国际通用语言
+      # 国际通用语言，覆盖英、美、澳等地区
     - name: Русский
       link: "javascript:translate.changeLanguage('russian');"
       lang: ru
-      # 俄罗斯 - 俄语在东欧和中亚广泛使用
+      # 俄罗斯及东欧部分地区使用
     - name: Français
       link: "javascript:translate.changeLanguage('french');"
       lang: fr
-      # 法国 - 法语是联合国官方语言之一
+      # 法国及非洲部分法语区使用
 
 
-# 版权信息 - 显示在页面底部
+# 版权信息（显示在页脚最底部）
 copyright: Copyright &copy; 2023 - 2025 Jie-Taoying
