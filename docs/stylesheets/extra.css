@@ -1,0 +1,15 @@
+:root > * {
+  --md-primary-fg-color:        #6F2B91; /* 主色调：清华大学标准紫色 */
+  --md-primary-fg-color--light: #A558D6; /* 浅色变体：用于悬停状态和轻微强调 */
+  --md-primary-fg-color--dark:  #471C5E; /* 深色变体：用于文本和图标 */
+  --md-accent-color:            #8E44AD; /* 强调色：用于链接和交互元素 */
+}
+
+/* 更精确的高亮效果 */
+.md-search-result__teaser mark {
+    background-color: #ffeb3b; /* 高亮背景色 */
+    color: #000000; /* 高亮文字颜色 */
+    padding: 0 2px; /* 调整内边距 */
+    border-radius: 2px; /* 调整圆角 */
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); /* 添加阴影效果 */
+}

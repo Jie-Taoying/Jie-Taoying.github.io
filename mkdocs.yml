@@ -1,22 +1,127 @@
-site_name: 攀登
-site_url: https://github.com/Jie-Taoying/Jie-Taoying.github.io
+site_name: 攀登                    # 网站名称，显示在导航栏和浏览器标签
+site_url: https://github.com/Jie-Taoying/Jie-Taoying.github.io  # 网站URL
+site_description: 攀登者的知识分享平台  # 网站描述，用于SEO
+site_author: Jie-Taoying          # 网站作者信息
+
+# 文档源文件目录和输出目录配置
+docs_dir: docs                    # Markdown源文件所在目录
+site_dir: site                    # 生成的静态网站输出目录
+
+# 主题配置 - Material主题核心设置
 theme:
-  name: material
+  name: material                  # 使用Material主题
+  # 自定义主色调（清华紫）
+  palette:
+    # 浅色模式配置
+    - media: "(prefers-color-scheme: light)"  # 检测系统浅色模式
+      scheme: default                         # 使用默认配色方案
+      primary: indigo                         # 主色调为靛蓝色
+      accent: light blue                      # 强调色为浅蓝色
+      toggle:
+        icon: material/brightness-7           # 切换按钮图标（太阳）
+        name: 切换到深色模式                   # 按钮提示文本
 
+    # 深色模式配置
+    - media: "(prefers-color-scheme: dark)"   # 检测系统深色模式
+      scheme: slate                           # 使用石板灰配色方案
+      primary: indigo                         # 主色调为靛蓝色
+      accent: light blue                      # 强调色为浅蓝色
+      toggle:
+        icon: material/brightness-4           # 切换按钮图标（月亮）
+        name: 切换到浅色模式                   # 按钮提示文本
+
+  # 启用的功能 - 主题增强功能列表
   features:
-    - navigation.footer
+    - navigation.footer        # 显示页脚导航
+    - navigation.instant       # 启用即时加载（无刷新导航）
+    - navigation.tabs          # 使用标签式导航
+    - navigation.sections      # 按章节分组导航项
+    - navigation.expand        # 默认展开所有导航层级
+    - navigation.path          # 显示当前页面在导航中的路径
+    - navigation.top           # 显示返回顶部按钮
+    - content.code.copy        # 在代码块添加复制按钮
+    - content.tabs.link        # 标签页支持链接
+    - header.autohide          # 滚动时自动隐藏头部
+    - navigation.indexes       # 将索引页视为常规页面
+    - search.highlight         # 高亮显示搜索结果
+    - search.share             # 添加搜索结果分享功能
+    - search.suggest           # 提供搜索建议
 
+  # 图标配置 - 设置网站图标
+  icon:
+    logo: material/book-open    # 网站标志图标
+    repo: material/github       # 仓库链接图标
+
+  # 字体配置 - 设置网站使用的字体
+  font:
+    text: Roboto                # 正文字体
+    code: Roboto Mono           # 代码字体
+
+# 导航结构 - 定义网站的导航菜单
+nav:
+  - 首页: index.md
+  - 关于我: about.md
+
+# 插件配置 - 启用各种MkDocs插件
+plugins:
+  - search                     # 搜索功能插件
+  
+  
+
+# Markdown扩展 - 增强Markdown语法支持
+markdown_extensions:
+  - toc:                      # 自动生成目录
+      permalink: true         # 为标题添加永久链接
+  - codehilite:               # 代码高亮
+      guess_lang: false       # 不自动猜测代码语言
+  - admonition                # 支持提示框（警告、提示等）
+  - footnotes                 # 支持脚注
+  - meta                      # 支持页面元数据
+  - pymdownx.arithmatex       # 支持数学公式
+  - pymdownx.betterem:        # 增强斜体和粗体支持
+      smart_enable: all
+  - pymdownx.caret            # 支持上标和插入标记
+  - pymdownx.critic           # 支持评论和修订标记
+  - pymdownx.details          # 支持折叠内容块
+  # - pymdownx.emoji:           # 支持表情符号
+    #  emoji_index: !!python/name:materialx.emoji.twemoji
+     # emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.highlight        # 高级代码高亮
+  - pymdownx.inlinehilite     # 支持行内代码高亮
+  - pymdownx.keys             # 支持键盘按键表示
+  - pymdownx.mark             # 支持标记文本
+  - pymdownx.smartsymbols     # 支持智能符号（如箭头、版权符号等）
+  - pymdownx.superfences      # 支持嵌套代码块
+  - pymdownx.tabbed           # 支持标签式内容
+  - pymdownx.tasklist:        # 支持任务列表
+      custom_checkbox: true
+  - pymdownx.tilde            # 支持删除线和下标
+
+# 自定义CSS和JavaScript - 添加自定义样式和脚本
+extra_css:
+  - stylesheets/extra.css      # 自定义CSS文件
+
+extra_javascript:
+  - javascripts/extra.js       # 自定义JavaScript文件
+
+# 仓库配置 - 设置Git仓库信息
+repo_name: Jie-Taoying/Jie-Taoying.github.io  # 仓库名称
+repo_url: https://github.com/Jie-Taoying/Jie-Taoying.github.io  # 仓库URL
+edit_uri: edit/main/docs/      # 编辑页面的链接格式
+
+# 社交链接 - 在页面底部显示社交链接
 extra:
   social:
-    - icon: fontawesome/brands/github  # GitHub 图标
-      link: https://github.com/Jie-Taoying  # 替换为您的 GitHub 链接
+    - icon: fontawesome/brands/github  # GitHub图标
+      link: https://github.com/Jie-Taoying  # GitHub链接
     - icon: fontawesome/brands/weixin  # 微信图标
-      link: https://s1.imagehub.cc/images/2025/07/26/4e9e072b52e963d4c149f3c3edca3388.jpg  # 替换为您的微信(ID/二维码/公众号)
-    - icon: fontawesome/brands/qq  # QQ 邮箱图标
-      link: https://s1.imagehub.cc/images/2025/07/28/dd3459f55526b7580ea87ee002dde4d7.jpg  # 替换为您的 QQ 邮箱地址
+      link: https://s1.imagehub.cc/images/2025/07/26/4e9e072b52e963d4c149f3c3edca3388.jpg  # 微信链接
+    - icon: fontawesome/brands/qq  # QQ图标
+      link: https://s1.imagehub.cc/images/2025/07/28/dd3459f55526b7580ea87ee002dde4d7.jpg  # QQ链接
     - icon: fontawesome/brands/x-twitter  # X（原Twitter）图标
-      link: https://twitter.com/你的Twitter用户名  # 替换为您的Twitter链接
-    - icon: fontawesome/solid/envelope # 邮箱图标
-      link: mailto:<2026125544@qq.com>
+      link: https://twitter.com/你的Twitter用户名  # Twitter链接
+    - icon: fontawesome/solid/envelope  # 邮箱图标
+      link: mailto:2026125544@qq.com  # 邮箱链接
 
+# 版权信息 - 显示在页面底部
 copyright: Copyright &copy; 2023 - 2025 Jie-Taoying
