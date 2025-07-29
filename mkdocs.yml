@@ -1,15 +1,23 @@
 site_name: 攀登                    # 网站名称，显示在导航栏和浏览器标签
 site_url: https://github.com/Jie-Taoying/Jie-Taoying.github.io  # 网站URL
-site_description: 攀登者的知识分享平台  # 网站描述，用于SEO
+site_description: 分享平台  # 网站描述，用于SEO
 site_author: Jie-Taoying          # 网站作者信息
+
 
 # 文档源文件目录和输出目录配置
 docs_dir: docs                    # Markdown源文件所在目录
 site_dir: site                    # 生成的静态网站输出目录
 
+
 # 主题配置 - Material主题核心设置
 theme:
   name: material                  # 使用Material主题
+  custom: overrides  # 指定自定义模板目录
+  language: zh
+  custom_dir: docs/overrides
+  favicon: docs/overrides/assets/images/卡拉比丘流形logo.jpeg  # 指定图标文件路径,站点logo
+  
+     
   # 自定义主色调（清华紫）
   palette:
     # 浅色模式配置
@@ -49,8 +57,11 @@ theme:
 
   # 图标配置 - 设置网站图标
   icon:
-    logo: material/book-open    # 网站标志图标
+    logo: material/school    # 网站标志图标
     repo: material/github       # 仓库链接图标
+    alternate: fontawesome/solid/language  # 自定义语言切换图标
+    previous: fontawesome/solid/angle-left
+    next: fontawesome/solid/angle-right
 
   # 字体配置 - 设置网站使用的字体
   font:
@@ -99,10 +110,13 @@ markdown_extensions:
 
 # 自定义CSS和JavaScript - 添加自定义样式和脚本
 extra_css:
-  - stylesheets/extra.css      # 自定义CSS文件
+  - overrides/assets/stylesheets/extra.css      # 自定义CSS文件
+  - https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css  # Font Awesome CSS
+
 
 extra_javascript:
-  - javascripts/extra.js       # 自定义JavaScript文件
+  - overrides/assets/javascripts/extra.js       # 自定义JavaScript文件
+
 
 # 仓库配置 - 设置Git仓库信息
 repo_name: Jie-Taoying/Jie-Taoying.github.io  # 仓库名称
@@ -122,6 +136,28 @@ extra:
       link: https://twitter.com/你的Twitter用户名  # Twitter链接
     - icon: fontawesome/solid/envelope  # 邮箱图标
       link: mailto:2026125544@qq.com  # 邮箱链接
+  alternate:
+    - name: 中文（简体）
+      link: "javascript:translate.changeLanguage('chinese_simplified');"
+      lang: zh
+      # 中国 - 简体中文是中国大陆的官方语言
+    - name: 中文（繁體）
+      link: "javascript:translate.changeLanguage('chinese_traditional');"
+      lang: zh_TW
+      # 中国香港、中国台湾、中国澳门 - 繁体中文在华语圈广泛使用
+    - name: English
+      link: "javascript:translate.changeLanguage('english');"
+      lang: en
+      # 英国、美国 - 英语是国际通用语言
+    - name: Русский
+      link: "javascript:translate.changeLanguage('russian');"
+      lang: ru
+      # 俄罗斯 - 俄语在东欧和中亚广泛使用
+    - name: Français
+      link: "javascript:translate.changeLanguage('french');"
+      lang: fr
+      # 法国 - 法语是联合国官方语言之一
+
 
 # 版权信息 - 显示在页面底部
 copyright: Copyright &copy; 2023 - 2025 Jie-Taoying
