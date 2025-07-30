@@ -1,5 +1,5 @@
 # 网站基础信息配置
-site_name: 深圳职业技术大学飞跃手册                    # 网站名称，显示在导航栏顶部和浏览器标签页
+site_name: 揭涛英攀登手册                    # 网站名称，显示在导航栏顶部和浏览器标签页
 site_url: https://github.com/Jie-Taoying/Jie-Taoying.github.io  # 网站访问URL，用于生成页面内绝对链接和SEO
 site_description: 分享平台  # 网站描述，会被搜索引擎抓取，用于优化搜索结果
 site_author: Jie-Taoying          # 网站作者信息，部分主题会在页脚显示
@@ -81,8 +81,9 @@ nav:
 
 # 启用的插件（扩展MkDocs功能）
 plugins:
-  - search                     # 内置搜索插件（提供全文搜索功能，必须启用）
-  
+  - search:
+      lang: zh
+      
 
 
 # Markdown语法扩展（增强Markdown功能）

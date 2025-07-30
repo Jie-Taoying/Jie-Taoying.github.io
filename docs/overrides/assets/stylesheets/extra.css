@@ -6,8 +6,11 @@
 }
 
 /* 搜索结果高亮样式 */
-.md-search-result__teaser mark {
-    background-color: yellow;
-    color: black;
+.md-search-result__teaser mark, .md-search-result__title mark {
+    background-color: #ffeb3b;
+    color: #000;
     font-weight: bold;
+    padding: 0.2em 0.4em;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
