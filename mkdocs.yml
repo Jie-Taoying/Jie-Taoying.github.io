@@ -72,12 +72,17 @@ theme:
 # 导航菜单结构（左侧导航栏显示的内容）
 nav:
   - 首页: index.md              # 导航项名称: 对应Markdown文件路径（index.md为首页默认文件）
+  - 书籍书摘: 
+    - 书摘: 书籍书摘/book_excerpt.md         # 书摘页面
+    
+    
   - 关于我: about.md            # 新增页面需在此处配置，否则不会显示在导航中
 
 
 # 启用的插件（扩展MkDocs功能）
 plugins:
   - search                     # 内置搜索插件（提供全文搜索功能，必须启用）
+  
 
 
 # Markdown语法扩展（增强Markdown功能）
