@@ -2,10 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://github.com/Jie-Taoying/Jie-Taoying.github.io/</loc>
-         <lastmod>2025-07-29</lastmod>
+         <lastmod>2025-07-30</lastmod>
     </url>
     <url>
          <loc>https://github.com/Jie-Taoying/Jie-Taoying.github.io/about/</loc>
-         <lastmod>2025-07-29</lastmod>
+         <lastmod>2025-07-30</lastmod>
+    </url>
+    <url>
+         <loc>https://github.com/Jie-Taoying/Jie-Taoying.github.io/%E4%B9%A6%E7%B1%8D%E4%B9%A6%E6%91%98/book_excerpt/</loc>
+         <lastmod>2025-07-30</lastmod>
     </url>
 </urlset>
