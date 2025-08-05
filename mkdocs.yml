@@ -73,7 +73,7 @@ theme:
 nav:
   - 首页: index.md              # 导航项名称: 对应Markdown文件路径（index.md为首页默认文件）
   - 书籍书摘: 
-    - 书摘: 书籍书摘/book_excerpt.html         # 书摘页面
+    - 书摘: 书籍书摘/book_excerpt.md         # 书摘页面
     
     
   - 关于我: about.md            # 新增页面需在此处配置，否则不会显示在导航中
