@@ -1,10 +1,3 @@
-<div id="pagination-container">
-  <div class="pagination-controls" style="margin: 20px 0; text-align: center;">
-    <button id="prev-page" style="padding: 8px 16px; margin-right: 10px; cursor: pointer; background-color: #007bff; color: white; border: none; border-radius: 4px;">上一页</button>
-    <span id="page-info" style="margin: 0 10px; font-size: 16px;">第 1 页 / 共 X 页</span>
-    <button id="next-page" style="padding: 8px 16px; margin-left: 10px; cursor: pointer; background-color: #007bff; color: white; border: none; border-radius: 4px;">下一页</button>
-  </div>
-
 | 序号 | 语录内容 | 出处 |
 | ---- | ---- | ---- |
 | 1 | 一个人一辈子，做一件事情对社会大众有贡献，对国家民族，对整个的社会，都是一种贡献，这才算是事业。 | —— 南怀瑾 |
@@ -51,52 +44,9 @@
 | 42 | 主题阅读：<br>①找到相关的章节<br>②带引作者与你达成共识<br>③厘清问题<br>④界定议题<br>⑤分析讨论 | —— 《如何阅读一本书》 |
 | 43 | 我会用四个问题来判断自己是否度过了美好的一天：<br>我睡得够吗？<br>我是否有足够的时间独处？<br>我是否与我爱的人深情相拥？<br>我是否为自己的身体做出了健康的选择？ | —— Ezra Klein |
 
-</div>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  const container = document.getElementById('pagination-container');
-  const table = container.querySelector('table');
-  const headerRow = table.querySelector('tr');
-  const dataRows = Array.from(table.querySelectorAll('tr')).slice(1); // 排除表头行
-  const rowsPerPage = 20;
-  let currentPage = 1;
-
-  function renderTable() {
-    const startIndex = (currentPage - 1) * rowsPerPage;
-    const endIndex = startIndex + rowsPerPage;
-    const totalPages = Math.ceil(dataRows.length / rowsPerPage);
-
-    // 显示当前页数据行
-    dataRows.forEach((row, index) => {
-      row.style.display = (index >= startIndex && index < endIndex) ? '' : 'none';
-    });
-
-    // 更新页码信息
-    document.getElementById('page-info').textContent = `第 ${currentPage} 页 / 共 ${totalPages} 页`;
-
-    // 控制按钮状态
-    document.getElementById('prev-page').disabled = currentPage === 1;
-    document.getElementById('next-page').disabled = currentPage === totalPages;
-  }
-
-  // 绑定按钮事件
-  document.getElementById('prev-page').addEventListener('click', () => {
-    if (currentPage > 1) {
-      currentPage--;
-      renderTable();
-    }
-  });
-
-  document.getElementById('next-page').addEventListener('click', () => {
-    const totalPages = Math.ceil(dataRows.length / rowsPerPage);
-    if (currentPage < totalPages) {
-      currentPage++;
-      renderTable();
-    }
-  });
 
   // 初始渲染
   renderTable();
 });
 </script>
+
